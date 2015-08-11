@@ -5,15 +5,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 import static spark.Spark.*;
-
-import spark.ModelAndView;
-import spark.template.freemarker.FreeMarkerEngine;
-import static spark.Spark.get;
 
 public class Main {
 	
@@ -29,7 +22,6 @@ public class Main {
 	
 		get("/db", (req, res) -> {
 		      Connection con = null;
-		      Map<String, Object> attributes = new HashMap<>();
 		      try {
 		    	  con = getConnection();
 					
@@ -37,22 +29,22 @@ public class Main {
 					
    			      ResultSet rs = stmt.executeQuery("select * from accounts");		    
    			      
-   			      ArrayList<String> output = new ArrayList<String>();
+   			      String s = "";
    			      
    			      while (rs.next()) {
-   			    	  output.add( "Read from DB: " + rs.getInt("secret"));
+   			    	  s += rs.getInt("name") + " ";
+   			    	  s += rs.getInt("pass") + " ";
+   			    	  s += rs.getInt("secret") + "\n";
    			      }
 
-   			      attributes.put("results", output);
-   			      return new ModelAndView(attributes, "db.ftl");
+   			      return s;
    			      
 		      } catch (Exception e) {
-		    	  attributes.put("message", "There was an error: " + e);
-		    	  return new ModelAndView(attributes, "error.ftl");
+		    	  return "exception";
 		      } finally {
 		    	  if (con != null) try{con.close();} catch(SQLException e){}
 		      }
-		   	}, new FreeMarkerEngine());
+		   	});
 		
 	
 		
