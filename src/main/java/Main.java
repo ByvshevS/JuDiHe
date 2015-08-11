@@ -32,6 +32,7 @@ public class Main {
 			e.printStackTrace();
 		}
 		
+		get("/", (req, res) -> "Hello World");
 		
 		get("/db", (req, res) -> {
 		      Connection con = null;
