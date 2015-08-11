@@ -18,7 +18,7 @@ public class Main {
 	public static void main(String[] args) {
 		
 		get("/", (req, res) -> "Hello World");
-		
+/*		
 		get("/db", (req, res) -> {
 		      Connection con = null;
 		      Map<String, Object> attributes = new HashMap<>();
@@ -46,7 +46,7 @@ public class Main {
 		      }
 		   	}, new FreeMarkerEngine());
 		
-		
+	*/	
 		
 	}
 	
