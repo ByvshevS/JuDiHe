@@ -32,6 +32,7 @@
         <target>1.8</target>
         <optimize>true</optimize>
         <debug>true</debug>
+        <appName>morning-basin-2502</appName>
     </configuration>
 </plugin>
       <plugin>

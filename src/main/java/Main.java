@@ -40,7 +40,9 @@ public class Main {
    			      return s;
    			      
 		      } catch (Exception e) {
-		    	  return "exception";
+		    	  return e.getMessage();
+		    	  
+		    	  //return "exception";
 		      } finally {
 		    	  if (con != null) try{con.close();} catch(SQLException e){}
 		      }
