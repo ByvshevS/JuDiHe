@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import static spark.Spark.*;
+
 import spark.ModelAndView;
 import spark.template.freemarker.FreeMarkerEngine;
 import static spark.Spark.get;
@@ -49,7 +51,7 @@ public class Main {
 	*/	
 		
 	}
-	
+	/*
 	private static Connection getConnection() throws URISyntaxException, SQLException {
 	    URI dbUri = new URI(System.getenv("DATABASE_URL"));
 
@@ -59,4 +61,5 @@ public class Main {
 
 	    return DriverManager.getConnection(dbUrl, username, password);
 	}
+	*/
 }
