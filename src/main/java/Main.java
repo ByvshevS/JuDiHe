@@ -23,7 +23,7 @@ public class Main {
 		
 		
 		get("/", (req, res) -> "Hello World");
-/*		
+	
 		get("/db", (req, res) -> {
 		      Connection con = null;
 		      Map<String, Object> attributes = new HashMap<>();
@@ -51,10 +51,10 @@ public class Main {
 		      }
 		   	}, new FreeMarkerEngine());
 		
-	*/	
+	
 		
 	}
-	/*
+	
 	private static Connection getConnection() throws URISyntaxException, SQLException {
 	    URI dbUri = new URI(System.getenv("DATABASE_URL"));
 
@@ -64,5 +64,5 @@ public class Main {
 
 	    return DriverManager.getConnection(dbUrl, username, password);
 	}
-	*/
+	
 }
