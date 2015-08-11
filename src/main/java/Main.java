@@ -22,7 +22,10 @@ public class Main {
 		port(Integer.valueOf(System.getenv("PORT")));
 		
 		
-		get("/", (req, res) -> "Hello World");
+		get("/", (req, res) -> {
+			String s = "Hello World";
+			return s;
+		});
 	
 		get("/db", (req, res) -> {
 		      Connection con = null;
