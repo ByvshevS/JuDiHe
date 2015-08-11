@@ -17,21 +17,6 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		try {
-			Connection con = getConnection();
-			
-			Statement stmt = con.createStatement();
-			
-			stmt.execute("select * from accounts");
-						
-		} catch (URISyntaxException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
 		get("/", (req, res) -> "Hello World");
 		
 		get("/db", (req, res) -> {
