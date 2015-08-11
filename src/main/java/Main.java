@@ -32,8 +32,9 @@ public class Main {
    			      String s = "";
    			      
    			      while (rs.next()) {
-   			    	  s += rs.getInt("name") + " ";
-   			    	  s += rs.getInt("pass") + " ";
+   			    	  
+   			    	  s += rs.getString("name") + " ";
+   			    	  s += rs.getString("pass") + " ";
    			    	  s += rs.getInt("secret") + "\n";
    			      }
 
