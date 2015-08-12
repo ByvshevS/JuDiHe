@@ -53,8 +53,33 @@ public class Main {
             response.type("text/xml");
             return "<?xml version=\"1.0\" encoding=\"UTF-8\"?><news> </news>";
         });
-	
 		
+		
+		put("/put", (request, response) -> {
+			
+			String name = request.body();
+			
+			if (name.length() > 0) {
+			
+			Connection con = null;
+			try {
+				con = getConnection();
+					
+				Statement stmt = con.createStatement();
+				
+				stmt.executeQuery("insert into accounts (name) values ('" + name + "');");		    
+ 			      
+		      } catch (Exception e) {
+		    	  return e.getMessage();
+		    	  
+		    	  //return "exception";
+		      } finally {
+		    	  if (con != null) try{con.close();} catch(SQLException e){}
+		      }
+			
+			}
+		    return "fail";
+		});
 	}
 	
 	private static Connection getConnection() throws URISyntaxException, SQLException {
