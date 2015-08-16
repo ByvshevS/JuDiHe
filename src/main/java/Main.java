@@ -70,6 +70,7 @@ public class Main {
 					stmt.executeQuery("insert into accounts (name) values ('" + name + "');");	
 					
 					response.body("completed");
+					response.type("text/xml"); 
 					
 					return response;
 	 			      
@@ -82,7 +83,9 @@ public class Main {
 			      }
 			
 			}
+			
 			response.body("fail");
+			response.type("text/xml"); 
 			
 		    return response;
 		});
