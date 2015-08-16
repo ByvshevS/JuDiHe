@@ -71,7 +71,7 @@ public class Main {
 					
 					response.body("completed");
 					
-					return "completed";
+					return response;
 	 			      
 			      } catch (Exception e) {
 			    	  return e.getMessage();
@@ -84,7 +84,7 @@ public class Main {
 			}
 			response.body("fail");
 			
-		    return "fail";
+		    return response;
 		});
 	}
 	
