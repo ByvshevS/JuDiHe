@@ -61,23 +61,29 @@ public class Main {
 			
 			if (name.length() > 0) {
 			
-			Connection con = null;
-			try {
-				con = getConnection();
+				Connection con = null;
+				try {
+					con = getConnection();
+						
+					Statement stmt = con.createStatement();
 					
-				Statement stmt = con.createStatement();
-				
-				stmt.executeQuery("insert into accounts (name) values ('" + name + "');");		    
- 			      
-		      } catch (Exception e) {
-		    	  return e.getMessage();
-		    	  
-		    	  //return "exception";
-		      } finally {
-		    	  if (con != null) try{con.close();} catch(SQLException e){}
-		      }
+					stmt.executeQuery("insert into accounts (name) values ('" + name + "');");	
+					
+					response.body("completed");
+					
+					return "completed";
+	 			      
+			      } catch (Exception e) {
+			    	  return e.getMessage();
+			    	  
+			    	  //return "exception";
+			      } finally {
+			    	  if (con != null) try{con.close();} catch(SQLException e){}
+			      }
 			
 			}
+			response.body("fail");
+			
 		    return "fail";
 		});
 	}
