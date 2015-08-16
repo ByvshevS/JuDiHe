@@ -68,11 +68,11 @@ public class Main {
 					Statement stmt = con.createStatement();
 					
 					stmt.executeQuery("insert into accounts (name) values ('" + name + "');");	
-					
+					/*
 					response.body("completed");
 					response.type("text/xml"); 
-					
-					return response;
+					*/
+					return "ok";
 	 			      
 			      } catch (Exception e) {
 			    	  return e.getMessage();
@@ -83,11 +83,11 @@ public class Main {
 			      }
 			
 			}
-			
+			/*
 			response.body("fail");
 			response.type("text/xml"); 
-			
-		    return response;
+			*/
+		    return "fail";
 		});
 	}
 	
