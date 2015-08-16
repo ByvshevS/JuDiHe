@@ -83,11 +83,12 @@ public class Main {
 			      }
 			
 			}
-			/*
+			
 			response.body("fail");
 			response.type("text/xml"); 
-			*/
-		    return "fail";
+			return response;
+			
+		    //return "fail";
 		});
 	}
 	
