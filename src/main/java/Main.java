@@ -55,7 +55,7 @@ public class Main {
         });
 		
 		
-		get("/put", (request, response) -> {
+		put("/put", (request, response) -> {
 			
 			String name = request.body();
 			
