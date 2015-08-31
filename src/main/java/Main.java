@@ -61,6 +61,13 @@ public class Main {
 			
 			return response;
 		});
+		
+		post("/put", (request, response) -> {
+			
+			System.out.println(request.toString());
+			
+			return response;
+		});
 	}
 	
 	private static Connection getConnection() throws URISyntaxException, SQLException {
