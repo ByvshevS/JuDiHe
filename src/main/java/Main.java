@@ -1,3 +1,7 @@
+import static spark.Spark.get;
+import static spark.Spark.post;
+import static spark.SparkBase.port;
+
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.sql.Connection;
@@ -5,12 +9,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.LinkedList;
-import java.util.List;
 
 import org.json.JSONObject;
-
-import static spark.Spark.*;
 
 public class Main {
 	
@@ -66,7 +66,12 @@ public class Main {
 			
 			System.out.println(req.get("name"));
 			
-			JSONObject res  = new JSONObject().put("status", "success");
+			
+			String query = "insert into accounts (name) values (" + req.get("name") + ");"; 
+			
+			String fin = new Executor().set(query);
+			
+			JSONObject res  = new JSONObject().put("status", fin);
 			
 			//response.type("json");
 			
