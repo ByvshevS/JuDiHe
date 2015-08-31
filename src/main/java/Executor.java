@@ -23,7 +23,9 @@ public class Executor {
 				
 			Statement stmt = con.createStatement();
 				
-			ResultSet rs = stmt.executeQuery(query);
+			//ResultSet rs =
+			
+			stmt.executeQuery(query);
 			
 			return OK;
 			
