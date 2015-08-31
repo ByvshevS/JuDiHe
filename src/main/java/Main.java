@@ -64,10 +64,11 @@ public class Main {
 			
 			JSONObject pack = new JSONObject().put("status", "success");
 			
-			response.body(pack.toString());
+			//response.body(pack.toString());
 			
-			return response;
-		});
+			return pack.toString();
+			
+		}, new JsonTransformer());
 	}
 	
 	private static Connection getConnection() throws URISyntaxException, SQLException {
