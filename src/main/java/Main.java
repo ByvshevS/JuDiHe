@@ -54,17 +54,11 @@ public class Main {
             return "<?xml version=\"1.0\" encoding=\"UTF-8\"?><news> </news>";
         });
 		
-		
-		put("/put", (request, response) -> {
-			
-			System.out.println(request.toString());
-			
-			return response;
-		});
-		
 		post("/put", (request, response) -> {
 			
 			System.out.println(request.toString());
+			
+			System.out.println(request.body());
 			
 			return response;
 		});
