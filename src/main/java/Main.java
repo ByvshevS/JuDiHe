@@ -70,7 +70,7 @@ public class Main {
 			
 			return response;
 			
-		}, new JsonTransformer());
+		});
 	}
 	
 	private static Connection getConnection() throws URISyntaxException, SQLException {
