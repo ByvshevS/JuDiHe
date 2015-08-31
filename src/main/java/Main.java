@@ -66,7 +66,7 @@ public class Main {
 			
 			response.body(pack.toString());
 			
-			response.type("JSON");
+			response.type("JSONObject");
 			
 			return response;
 			
