@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import org.json.JSONObject;
+
 import static spark.Spark.*;
 
 public class Main {
@@ -59,6 +61,10 @@ public class Main {
 			System.out.println(request.toString());
 			
 			System.out.println(request.body());
+			
+			JSONObject pack = new JSONObject().put("status", "success");
+			
+			response.body(pack.toString());
 			
 			return response;
 		});
