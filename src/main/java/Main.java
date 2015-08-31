@@ -64,9 +64,13 @@ public class Main {
 			
 			JSONObject pack = new JSONObject().put("status", "success");
 			
-			return pack.toString();
+			response.type("json");
 			
-		}, new JsonTransformer());
+			response.body(pack.toString());
+			
+			return response;
+			
+		});
 	}
 	
 	private static Connection getConnection() throws URISyntaxException, SQLException {
