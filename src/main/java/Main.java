@@ -64,9 +64,11 @@ public class Main {
 			
 			JSONObject pack = new JSONObject().put("status", "success");
 			
-			//response.body(pack.toString());
+			response.body(pack.toString());
 			
-			return pack.toString();
+			response.type("JSON");
+			
+			return response;
 			
 		}, new JsonTransformer());
 	}
