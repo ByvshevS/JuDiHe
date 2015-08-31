@@ -31,9 +31,15 @@ public class Executor {
 			
 	      } catch (Exception e) { 
 	    	  //return e.getMessage();
+	    	  
+	    	  System.out.println(e.getMessage());
+	    	  
 	    	  return FAIL;
 	    	  } finally { 
-	    		  if (con != null) try{ con.close(); } catch(SQLException e) { }
+	    		  if (con != null) try{ con.close(); } 
+	    		  catch(SQLException e) {
+	    			  System.out.println(e.getMessage());
+	    		  }
 	      }
 	}
 	
