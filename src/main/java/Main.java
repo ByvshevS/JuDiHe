@@ -57,38 +57,9 @@ public class Main {
 		
 		put("/put", (request, response) -> {
 			
-			String name = request.body();
+			System.out.println(request.toString());
 			
-			if (name.length() > 0) {
-			
-				Connection con = null;
-				try {
-					con = getConnection();
-						
-					Statement stmt = con.createStatement();
-					
-					stmt.executeQuery("insert into accounts (name) values ('" + name + "');");	
-					/*
-					response.body("completed");
-					response.type("text/xml"); 
-					*/
-					return "ok";
-	 			      
-			      } catch (Exception e) {
-			    	  return e.getMessage();
-			    	  
-			    	  //return "exception";
-			      } finally {
-			    	  if (con != null) try{con.close();} catch(SQLException e){}
-			      }
-			
-			}
-			
-			response.body("fail");
-			response.type("text/xml"); 
 			return response;
-			
-		    //return "fail";
 		});
 	}
 	
