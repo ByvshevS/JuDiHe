@@ -5,8 +5,12 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.LinkedList;
+import java.util.List;
 
 import org.json.JSONObject;
+
+import com.google.gson.Gson;
 
 import static spark.Spark.*;
 
@@ -60,6 +64,8 @@ public class Main {
 			
 			System.out.println(request.toString());
 			
+			System.out.println(request.contentType());
+			
 			System.out.println(request.body());
 			
 			JSONObject pack = new JSONObject().put("status", "success");
@@ -68,7 +74,7 @@ public class Main {
 			
 			response.body(pack.toString());
 			
-			return response;
+			return pack;
 			
 		});
 	}
@@ -82,5 +88,4 @@ public class Main {
 
 	    return DriverManager.getConnection(dbUrl, username, password);
 	}
-	
 }
