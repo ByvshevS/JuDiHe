@@ -10,8 +10,6 @@ import java.util.List;
 
 import org.json.JSONObject;
 
-import com.google.gson.Gson;
-
 import static spark.Spark.*;
 
 public class Main {
@@ -62,19 +60,19 @@ public class Main {
 		
 		post("/put", (request, response) -> {
 			
-			System.out.println(request.toString());
-			
-			System.out.println(request.contentType());
-			
 			System.out.println(request.body());
 			
-			JSONObject pack = new JSONObject().put("status", "success");
+			JSONObject req = new JSONObject(request.body());
 			
-			response.type("json");
+			System.out.println(req.get("name"));
 			
-			response.body(pack.toString());
+			JSONObject res  = new JSONObject().put("status", "success");
 			
-			return pack;
+			//response.type("json");
+			
+			//response.body(pack.toString());
+			
+			return res;
 			
 		});
 	}
