@@ -98,6 +98,12 @@ public class Main {
 			return res;
 			
 		});
+		
+		post("/signin", (request, response) -> {
+			JSONObject req = new JSONObject(request.body());
+			
+			return new Executor().getSecret(req);
+		});
 	}
 	
 	private static Connection getConnection() throws URISyntaxException, SQLException {
