@@ -67,7 +67,7 @@ public class Main {
 			System.out.println(req.get("name"));
 			
 			
-			String query = "insert into accounts (name) values (\"" + req.get("name") + "\", );"; 
+			String query = "insert into accounts (name) values ('" + req.get("name") + "');"; 
 			
 			String fin = new Executor().set(query);
 			
