@@ -80,6 +80,24 @@ public class Main {
 			return res;
 			
 		});
+		
+		post("/query", (request, response) -> {
+			
+			JSONObject req = new JSONObject(request.body());
+			
+			String query = (String) req.get("query"); 
+			
+			String result = new Executor().executeQuery(query);
+			
+			JSONObject res  = new JSONObject().put("result", result);
+			
+			//response.type("json");
+			
+			//response.body(pack.toString());
+			
+			return res;
+			
+		});
 	}
 	
 	private static Connection getConnection() throws URISyntaxException, SQLException {
